@@ -1,0 +1,190 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#topPane{
+	-fx-background-color: DAE6FF;
+	-fx-border-width: 1 0 1 0;
+	-fx-border-color: lightGrey lightGrey grey lightGrey;
+}
+
+#leftPane, #rightPane{
+	-fx-background-color: DAE6FF;
+	-fx-border-width: 0 1 0 0;
+	-fx-border-color: lightGrey grey lightGrey lightGrey;
+}
+
+.tab-pane .tab-header-area .tab-header-background{
+	-fx-background-color: DAE6FF;
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: rgb(175,175,175);
+}
+
+#menu-button {
+  -fx-graphic: url('/images/menu.png');
+  -fx-border-color: rgb(30, 133, 172);
+  -fx-border-radius: 3px;
+}
+
+#menu-button:hover {
+  -fx-graphic: url('/images/menuHover.png');
+  -fx-border-color: rgb(70, 173, 212);
+  -fx-border-radius: 3px;
+}
+
+.menu-active {
+  -fx-graphic: url('/images/menuHover.png');
+  -fx-border-color: rgb(70, 173, 212);
+  -fx-border-radius: 3px;
+  -fx-background-color: lightGrey;
+  -fx-background-radius: 3px;
+}
+
+#image-button {
+  -fx-border-color: rgb(30, 133, 172);
+  -fx-border-radius: 3px;
+}
+
+#image-button:hover {
+  -fx-border-color: rgb(70, 173, 212);
+  -fx-border-radius: 3px;
+  -fx-background-color: lightGrey;
+  -fx-background-radius: 3px;
+}
+
+#image-button:pressed {
+  -fx-border-color: rgb(50, 153, 192);
+  -fx-border-radius: 3px;
+  -fx-background-color: grey;
+  -fx-background-radius: 3px;
+}
+
+
+#menu {
+  -fx-font-size: 14;
+  -fx-background-color: white;
+  -fx-border-color: grey;
+  -fx-border-width: 1;
+  -fx-background-insets: 2;
+  -fx-border-insets: 1;
+  -fx-border-radius: 0 5 5 5;
+  -fx-background-radius: 0 5 5 5;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 5, 5);
+}
+
+#button_image_text{
+	-fx-padding: 10px;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 10px;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+#button_image_text:hover{
+	-fx-padding: 10px;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 10px;
+	-fx-background-color: rgb(240,240,240);
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+	-fx-border-color: lightGrey;
+}
+
+#button_image_text:pressed{
+	-fx-padding: 10px;
+    -fx-border-insets: 10px;
+    -fx-background-insets: 10px;
+	-fx-background-color: lightGrey;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+	-fx-border-color: grey;
+}
+
+#testConf{
+	
+}
+
+#testExec{
+
+}
+
+.bold{
+	-fx-font-weight: bold;
+}
+
+.check-box *.box {
+  	-fx-border-color: grey;
+  	-fx-border-radius: 3px;
+  	-fx-background-color: white;
+}
+
+#tabBorder{
+	-fx-border-width: 0 1 1 1;
+	-fx-border-color: rgb(175,175,175);
+	-fx-background-color: rgb(245, 245, 245);
+}
+
+#vBoxCredentials, #confCredentials, #tabLeftContent{
+	-fx-background-color: rgb(245, 245, 245);
+}
+
+#scrollPaneBorderTransparent{
+	-fx-border-color: rgb(245, 245, 245);
+}
+
+.error{
+	-fx-border-color: firebrick;
+	-fx-border-radius: 3;
+}
+
+#glassPane{
+	-fx-background-color: rgba(0.8, 0.8, 0.8, 0.3);
+}
+
+#pbBlue .bar{
+	-fx-background-color: #6495ed;
+	-fx-background-insets: 1 2 2 1;
+}
+
+#pbBlue .track{
+	-fx-text-box-border: #00ffff;
+	-fx-control-inner-background: #f0ffff;
+}
+
+#pbGreen .bar{
+	-fx-background-color: #228b22;
+	-fx-background-insets: 1 2 2 1;
+}
+
+#pbGreen .track{
+	-fx-text-box-border: #7cfc00;
+	-fx-control-inner-background: #f0fff0;
+}
+
+#pbYellow .bar{
+	-fx-background-color: #ffff00;
+	-fx-background-insets: 1 2 2 1;
+}
+
+#pbYellow .track{
+    -fx-text-box-border: #ffe700;
+	-fx-control-inner-background: #ffffe0;
+}
+
+#pbOrange .bar{
+	-fx-background-color: #ff8c00;
+	-fx-background-insets: 1 2 2 1;
+}
+
+#pbOrange .track{
+	-fx-text-box-border: #ffa500;
+	-fx-control-inner-background: #fff4c5;
+}
+
+#pbRed .bar{
+	-fx-background-color: #ff0000;
+	-fx-background-insets: 1 2 2 1;
+}
+
+#pbRed .track{
+	-fx-text-box-border: #ff4500;
+	-fx-control-inner-background: #ffeecc;
+}
+
