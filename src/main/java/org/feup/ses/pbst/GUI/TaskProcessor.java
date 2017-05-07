@@ -153,7 +153,6 @@ public class TaskProcessor extends Observable implements Observer {
             if (!isDiscoverStage() && !isTestStage() && !startedLockout) {
 
                 finished = true;
-
                 stop();
             }
 

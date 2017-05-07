@@ -191,4 +191,57 @@ public class Utils {
 
         return false;
     }
+
+    public static HttpResponse loginWithResponse(TestConfAndResult pbstTest, FormValuesHolder holder, String username, String password) {
+        try {
+            List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
+            urlParameters.add(new BasicNameValuePair(holder.getInputUsername(), username));
+            urlParameters.add(new BasicNameValuePair(holder.getInputPassword(), password));
+
+            HttpEntity entity = new UrlEncodedFormEntity(urlParameters);
+
+            HttpPost post = Utils.createPost(holder.getAction(), entity);
+
+            HttpClient client = HttpClientBuilder.create().build();
+
+            HttpResponse response = client.execute(post);
+
+            int statusCode = response.getStatusLine().getStatusCode();
+
+            EntityUtils.consume(entity);
+
+            if (statusCode == 200 && response.getLastHeader("Location") != null) {
+                String url = response.getLastHeader("Location").getValue();
+            }
+
+            return response;
+
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    public static HttpResponse loginWithHeader(TestConfAndResult pbstTest, FormValuesHolder holder, String cookie) {
+        try {
+
+            List<NameValuePair> urlParameters = new ArrayList<>();
+            HttpEntity entity = new UrlEncodedFormEntity(urlParameters);
+
+            HttpPost post = Utils.createPost(holder.getAction(), entity);
+            post.setHeader("Cookie", cookie);
+
+            HttpClient client = HttpClientBuilder.create().build();
+
+            HttpResponse response = client.execute(post);
+
+            int statusCode = response.getStatusLine().getStatusCode();
+
+            EntityUtils.consume(entity);
+
+            return response;
+
+        } catch (IOException e) {
+            return null;
+        }
+    }
 }

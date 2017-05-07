@@ -38,7 +38,7 @@ public class GuiTestsConfiguration extends Observable {
 
     public static final String TIMEOUT = "timeout";
     public static final int DEFAULT_TIMEOUT = 5;
-    public static final int DEFAULT_DISCOVERING_STOP = 1000;
+    public static final int DEFAULT_DISCOVERING_STOP = 10;
     public static final double WIDTH = 350;
 
     private Stage stage;
@@ -529,7 +529,7 @@ public class GuiTestsConfiguration extends Observable {
         allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.ELEVATION_OF_PRIVILEGE_CPC.getLiteral(), allPatterns, true));
 //    	allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.ELEVATION_OF_PRIVILEGE_CVAS.getLiteral(), allPatterns, true));
 //    	allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.INFORMATION_DISCLOSURE_CT.getLiteral(), allPatterns, true));
-        allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.SPOOFING_CT.getLiteral(), allPatterns, true));
+        allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.SPOOFING_CT.getLiteral(), allPatterns, false));
 
         allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.MULTI_PURPOSE_DZ.getLiteral(), allPatterns, true));
         allPatterns.addChild(new CheckBoxPBST(vBox, PatternEnum.INFORMATION_DISCLOSURE_DS.getLiteral(), allPatterns, true));

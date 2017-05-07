@@ -16,6 +16,7 @@ import org.feup.ses.pbst.Enums.PatternEnum;
 import org.feup.ses.pbst.TestConfAndResult;
 import org.feup.ses.pbst.patternTests.spoofing.AccountLockout;
 import org.feup.ses.pbst.patternTests.spoofing.AuthenticationEnforcer;
+import org.feup.ses.pbst.patternTests.spoofing.CredentialTokenizer;
 
 public class TestsLauncher extends Observable {
 
@@ -132,6 +133,12 @@ public class TestsLauncher extends Observable {
                             if (pbstTest.getPatterns().get(PatternEnum.SPOOFING_AE.getLiteral()) != null && pbstTest.getPatterns().get(PatternEnum.SPOOFING_AE.getLiteral()).booleanValue()) {
                                 AuthenticationEnforcer authenticationEnforcer = new AuthenticationEnforcer();
                                 authenticationEnforcer.startTests(wp, pbstTest, holder);
+                                tested = true;
+                            }
+
+                            if (pbstTest.getPatterns().get(PatternEnum.SPOOFING_CT.getLiteral()) != null && pbstTest.getPatterns().get(PatternEnum.SPOOFING_CT.getLiteral()).booleanValue()) {
+                                CredentialTokenizer credentialTokenizer = new CredentialTokenizer();
+                                credentialTokenizer.startTests(wp, pbstTest, holder);
                                 tested = true;
                             }
 
