@@ -15,9 +15,12 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.feup.ses.pbst.Enums.AuthHeader;
 import org.feup.ses.pbst.TestConfAndResult;
 import org.feup.ses.pbst.patternTests.FormValuesHolder;
 
@@ -221,18 +224,18 @@ public class Utils {
         }
     }
 
-    public static HttpResponse loginWithHeader(TestConfAndResult pbstTest, FormValuesHolder holder, String cookie) {
+    public static HttpResponse makeRequest(String uri, String cookies, AuthHeader header){
         try {
 
-            List<NameValuePair> urlParameters = new ArrayList<>();
-            HttpEntity entity = new UrlEncodedFormEntity(urlParameters);
+            HttpEntity entity = new BasicHttpEntity();
 
-            HttpPost post = Utils.createPost(holder.getAction(), entity);
-            post.setHeader("Cookie", cookie);
+            HttpGet get = new HttpGet(uri);
+
+            if (header != null) get.setHeader(header.header(), cookies);
 
             HttpClient client = HttpClientBuilder.create().build();
 
-            HttpResponse response = client.execute(post);
+            HttpResponse response = client.execute(get);
 
             int statusCode = response.getStatusLine().getStatusCode();
 
@@ -241,6 +244,16 @@ public class Utils {
             return response;
 
         } catch (IOException e) {
+            return null;
+        }
+    }
+
+    public static String getBody(HttpResponse response){
+        HttpEntity entity = response.getEntity();
+
+        try {
+            return EntityUtils.toString(entity, "UTF-8");
+        }catch (IOException e){
             return null;
         }
     }
